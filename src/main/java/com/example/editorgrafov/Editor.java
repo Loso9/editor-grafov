@@ -524,8 +524,9 @@ public class Editor extends Application {
          */
         Label lastAction = new Label("Last action: ");
         canvas.getChildren().add(lastAction);
+        //no binds yet TODO
         lastAction.setLayoutX(10);
-        lastAction.setLayoutY(canvasHeight - 50);
+        lastAction.setLayoutY(canvasHeight - 60);
 
         /*
          * shortcuts for some actions
