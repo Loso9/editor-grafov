@@ -20,7 +20,7 @@ public class Manual extends Application {
     /**
      * Method for loading Manual from file "man.txt"
      * @return String representation of manual
-     * @throws FileNotFoundException iff file "man.txt" was not found in dir, where it is supposed to be placed (project_name/src)
+     * @throws FileNotFoundException iff file "man.txt" was not found in dir, where it is supposed to be placed (project_name)
      */
     public String loadManual() throws FileNotFoundException {
         if (manualOpened) return manualContent;
