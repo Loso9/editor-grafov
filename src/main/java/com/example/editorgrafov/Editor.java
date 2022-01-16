@@ -2,6 +2,7 @@ package com.example.editorgrafov;
 
 import com.example.editorgrafov.enums.Action;
 import com.example.editorgrafov.enums.Mode;
+import com.example.editorgrafov.tuples.*;
 import javafx.application.*;
 import javafx.collections.ListChangeListener;
 import javafx.css.PseudoClass;
@@ -36,6 +37,7 @@ public class Editor extends Application {
     private List<Triplet<String, Button, Mode>> listOfButtons;
     private List<Pair<String, Mode>> listOfModes;
     private Map<String, Stack<Vertex>> vertices;
+    private Label lastAction = new Label("");
 
     private static final int defaultWindowHeight = 800;
     private static final int defaultWindowWidth = 1200;
@@ -331,6 +333,7 @@ public class Editor extends Application {
             }
         }
         insert.setSelected(true);
+        lastAction.setText("Last action: None");
     }
 
     /**
@@ -522,7 +525,7 @@ public class Editor extends Application {
         /*
          * Label for showing last action
          */
-        Label lastAction = new Label("Last action: ");
+        lastAction = new Label("Last action: None");
         canvas.getChildren().add(lastAction);
         //no binds yet TODO
         lastAction.setLayoutX(10);
@@ -548,15 +551,23 @@ public class Editor extends Application {
          */
         menuItemNew.setOnAction(actionEvent -> {
             newAction(); //can ignore the return value
+            canvas.getChildren().add(modeSelected);
+            canvas.getChildren().add(lastAction);
         });
         menuItemSave.setOnAction(actionEvent -> {
             saveAction();//errorAction(Action.SAVE);
+            canvas.getChildren().add(modeSelected);
+            canvas.getChildren().add(lastAction);
         });
         menuItemOpen.setOnAction(actionEvent -> {
             openAction();//errorAction(Action.OPEN);
+            canvas.getChildren().add(modeSelected);
+            canvas.getChildren().add(lastAction);
         });
         menuItemExport.setOnAction(actionEvent -> {
             saveAsAction(); //errorAction(Action.SAVEAS);
+            canvas.getChildren().add(modeSelected);
+            canvas.getChildren().add(lastAction);
         });
         menuItemExit.setOnAction(actionEvent -> exitAction());
         modes.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
@@ -683,6 +694,7 @@ public class Editor extends Application {
         scene.getStylesheets().add("styles.css");
         pane.setId("rootPane");
         modeSelected.setId("modeSelected");
+        lastAction.setId("modeSelected");
 
 
         /*
