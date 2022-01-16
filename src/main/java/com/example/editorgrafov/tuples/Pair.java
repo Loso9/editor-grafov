@@ -1,4 +1,4 @@
-package com.example.editorgrafov;
+package com.example.editorgrafov.tuples;
 
 import java.util.Objects;
 
