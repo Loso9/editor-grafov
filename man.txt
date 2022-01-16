@@ -1,0 +1,23 @@
+By default, the application starts in "Insert nodes" mode - if you want to change mode, check MODE CHANGE down below. 
+
+MODE CHANGE
+- for adding nodes: Click on option "Mode" in menu bar on top of the window and select "Insert nodes" mode
+- for deleting nodes: Click on option "Mode" in menu bar on top of the window and select "Delete nodes" mode
+- for adding edges: Click on option "Mode" in menu bar on top of the window and select "Add edges" mode
+- for deleting edges: Click on option "Mode" in menu bar on top of the window and select "Add edges" mode
+
+SHORTCUTS (BINDINGS):
+CTRL + N -> Open new window
+CTRL + M -> Open manual
+CTRL + S -> Save current session
+CTRL + SHIFT + S -> Save current session as (choose file)
+ALT + F4 -> Exit application
+
+INSERT NODES MODE
+- only "Add vertex" and its textField are not disabled for user
+- user types in value of Node to be added and clicks "Add vertex" button - afterwards, node is placed to random place in canvas
+
+DELETE NODES MODE
+- only "Delete vertex" button and its textField are not disabled for user
+- user types in value of Node to be deleted and clicks "Delete vertex" button - afterwards, LAST added node with specified value is deleted
+
